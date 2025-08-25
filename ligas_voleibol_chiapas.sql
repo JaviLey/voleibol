@@ -37,14 +37,9 @@ CREATE TABLE IF NOT EXISTS `equipos` (
   KEY `id_usuario` (`id_usuario`),
   CONSTRAINT `equipos_ibfk_1` FOREIGN KEY (`id_liga`) REFERENCES `ligas` (`id`),
   CONSTRAINT `equipos_ibfk_2` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Volcando datos para la tabla ligas_voleibol_chiapas.equipos: ~4 rows (aproximadamente)
-INSERT INTO `equipos` (`id`, `id_liga`, `id_usuario`, `nombre_equipo`, `logo`, `rama`, `categoria`, `validado`, `comprobante_inscripcion`, `fecha_registro`, `referencia_pago`) VALUES
-	(1, 1, 3, 'Kchorros', 'logos/68aaa99bb51e4.png', 'varonil', 'Libre', 1, 'comprobantes/68aaa99bb535d.png', '2025-08-23 23:56:43', '12345'),
-	(2, 1, 4, 'Valkirias', 'logos/68aac0c8e34f6.png', 'varonil', 'Libre', 1, 'comprobantes/68aac0c8e3a28.png', '2025-08-24 01:35:36', '123456'),
-	(3, 1, 5, 'Amazonas', 'logos/68aac48cbb7d2.png', 'femenil', '', 1, 'comprobantes/68aac48cbba09.png', '2025-08-24 01:51:40', '123456'),
-	(4, 1, 5, 'TecTuxtla', NULL, 'femenil', '1ra. Division', 1, 'comprobantes/68aaca0d8a19b.png', '2025-08-24 02:15:09', '123456');
+
 
 -- Volcando estructura para tabla ligas_voleibol_chiapas.jugadores
 CREATE TABLE IF NOT EXISTS `jugadores` (
@@ -84,7 +79,7 @@ CREATE TABLE IF NOT EXISTS `ligas` (
 
 -- Volcando datos para la tabla ligas_voleibol_chiapas.ligas: ~1 rows (aproximadamente)
 INSERT INTO `ligas` (`id`, `nombre`, `logo`, `fondo_cedula`, `logo_fmvb`, `logo_avech`, `activa`, `fecha_creacion`) VALUES
-	(1, 'Liga Municipal de Voleibol de Tuxtla Gutiérrez', NULL, NULL, NULL, NULL, 1, '2025-08-23 23:26:25');
+	(1, 'Liga Municipal de Voleibol OMA', NULL, NULL, NULL, NULL, 1, '2025-08-23 23:26:25');
 
 -- Volcando estructura para tabla ligas_voleibol_chiapas.pagos_credenciales
 CREATE TABLE IF NOT EXISTS `pagos_credenciales` (
@@ -134,14 +129,11 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `fecha_registro` datetime DEFAULT current_timestamp(),
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Volcando datos para la tabla ligas_voleibol_chiapas.usuarios: ~4 rows (aproximadamente)
 INSERT INTO `usuarios` (`id`, `email`, `password`, `nombre_completo`, `telefono`, `direccion`, `tipo`, `activo`, `fecha_registro`) VALUES
-	(1, 'admin@voleibolchiapas.com', '$2y$10$E.uDo1mTKGdlTeYf3e3b7e22lTzCw4/kzXe7qsUe.PV4GVTMg0iPa', 'Administrador Principal', '9611234567', 'Tuxtla Gutiérrez, Chiapas', 'admin', 1, '2025-08-23 23:26:25'),
-	(3, 'leyva10270307@gmail.com', '$2y$10$p4wDJmnX0CSUbCR61uXMA.nJb94W56n4sQUPJwya4EL09Ny7371IK', 'Javier Francisco Leyva González', '9612573952', 'Av Selenita 218, Jardines del Pedregal', 'delegado', 1, '2025-08-23 23:56:43'),
-	(4, 'javier.leyva@upgch.mx', '$2y$10$ga7upKu7KL2ieGQa8Uk5yuZe41wff2I69FpGRAle18o0cmuJIBefu', 'Javier Francisco Leyva González', '9612573952', 'Av. Selenita 218 Jardines del Pedregal', 'delegado', 1, '2025-08-24 01:35:36'),
-	(5, 'javier.leyva@gmail.com', '$2y$10$Cx1qTWXwL9aS4a6D1oep1OlL1k0TUC/pLi70xFsbRBYWirvGWgAzW', 'JAVIER FRANCISCO LEYVA GONZÁLEZ', '9612573952', 'Av. Selenita 218 Jardines del Pedregal', 'delegado', 1, '2025-08-24 01:51:40');
+	(1, 'admin@voleibolchiapas.com', '$2y$10$E.uDo1mTKGdlTeYf3e3b7e22lTzCw4/kzXe7qsUe.PV4GVTMg0iPa', 'Administrador Principal', '9611234567', 'Tuxtla Gutiérrez, Chiapas', 'admin', 1, '2025-08-23 23:26:25');
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
